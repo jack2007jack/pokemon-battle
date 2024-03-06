@@ -26,6 +26,9 @@ pokemons_file.close() # Closing file
 
 print(pokemons[0])
 
+def myfunc(thislist):
+  return int(thislist ["total"])
+
 while True:
     print("1. Show pokemon by index")
     print("2. Top 10 strongest pokemons (by total)")
@@ -36,15 +39,34 @@ while True:
     choice = input("Enter your choice (1-5): ")
 
     if choice == '1':
-        # https://www.w3schools.com/python/python_dictionaries_access.asp
+
+        pokemon = int(input("pokemon number:"))
+        print(pokemons[pokemon-1])
         pass
+
     elif choice == '2':
-        # https://www.w3schools.com/python/python_lists_sort.asp
+
+        thislist = pokemons.copy()
+        thislist.sort(reverse = True, key=myfunc)
+        print(thislist[:10])
+
         pass
     elif choice == '3':
-        # https://www.w3schools.com/python/python_lists_sort.asp
+
+        thislist = pokemons.copy()
+        thislist.sort(key=myfunc)
+        print(thislist[:10])
+
         pass
     elif choice == '4':
+    
+        pokemon = [random.randint(1,51) for i in range(1)]
+        print(pokemons["name"])
+
+        pokemon = int(input("pokemon number:"))
+        print(pokemons[pokemon-1])
+       
+        pass
         # Battle
         # 
         # https://www.w3schools.com/python/ref_random_choice.asp - random choice
